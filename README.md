@@ -18,10 +18,10 @@ cd saves_princess_take_two
 ------------------------------
 First Test
 ```
-rspec spec/save_princess_spec.rb
+rspec spec/save_princess_take_two_spec.rb
 ```
 
 Second Test
 ```
-rspec spec/save_princess_2_spec.rb
+rspec spec/save_princess_2_take_two_spec.rb
 ```
