@@ -14,6 +14,14 @@ class GameBoard
     m_column = @m_location[1]
     print_directions_to_princess(p_row, m_row, p_column, m_column)
   end
+
+  def next_move
+    p_row = @p_location[0]
+    m_row = @m_location[0]
+    p_column = @p_location[1]
+    m_column = @m_location[1]
+    print_next_move(p_row, m_row, p_column, m_column)
+  end
 end
 
 def print_directions_to_princess(p_row, m_row, p_column, m_column)
@@ -43,4 +51,19 @@ def print_directions_to_princess(p_row, m_row, p_column, m_column)
     directions += "LEFT"
   end
   directions
+end
+
+def print_next_move(p_row, m_row, p_column, m_column)
+  if p_row > m_row
+    move = "DOWN"
+  elsif p_row < m_row
+    move = "UP"
+  elsif p_row == m_row
+    if p_column > m_column
+      move = "RIGHT"
+    else
+      move = "LEFT"
+    end
+  end
+  move
 end
