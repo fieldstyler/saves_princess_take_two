@@ -1,3 +1,8 @@
+input = ARGF.read
+lines = input.strip.split("\n")
+n = lines[0].to_i
+grid = lines[1..-1]
+
 class GameBoard
   attr_reader :n, :grid, :m_location, :p_location
   def initialize(n, grid)
@@ -50,3 +55,6 @@ def horizontal_directions(m, p)
   end
   steps
 end
+
+bot_saves_princess = GameBoard.new(n, grid)
+puts bot_saves_princess.display_path_to_princess()
