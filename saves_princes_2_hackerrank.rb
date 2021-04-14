@@ -1,3 +1,9 @@
+input = ARGF.read
+lines = input.strip.split("\n")
+n = lines[0].to_i
+r,c = lines[1].strip.split.map {|n| n.to_i}
+grid = lines[2..-1]
+
 class GameBoard
   attr_reader :n, :grid, :m_location, :p_location
   def initialize(n, grid)
@@ -18,10 +24,6 @@ class GameBoard
     coords
   end
 
-  def display_path_to_princess(steps="")
-    steps += directions(@m_location, @p_location)
-  end
-
   def next_move(m=@m_location, p=@p_location)
     case
     when m[0] > p[0]; move = "UP"
@@ -32,28 +34,5 @@ class GameBoard
   end
 end
 
-def directions(m, p)
-  diff = (m[0] - p[0]).abs
-  steps = ""
-  if m[0] > p[0]
-    diff.times do steps += "UP\n"
-    end
-  else
-    diff.times do steps += "DOWN\n"
-    end
-  end
-  steps += horizontal_directions(m, p)
-end
-
-def horizontal_directions(m, p)
-  diff = (m[1] - p[1]).abs
-  steps = ""
-  if m[1] > p[1]
-    diff.times do steps += "LEFT\n"
-    end
-  else
-    diff.times do steps += "RIGHT\n"
-    end
-  end
-  steps
-end
+save_princess_2 = GameBoard.new(n, grid)
+puts save_princess_2.next_move
