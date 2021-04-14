@@ -25,7 +25,6 @@ class GameBoard
 
   def display_path_to_princess(steps="")
     steps += directions(@m_location, @p_location)
-    steps
   end
 end
 
@@ -40,7 +39,6 @@ def directions(m, p)
     end
   end
   steps += horizontal_directions(m, p)
-  steps
 end
 
 def horizontal_directions(m, p)
