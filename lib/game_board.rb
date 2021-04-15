@@ -18,7 +18,7 @@ class GameBoard
     coords
   end
 
-  def display_path_to_princess()
+  def display_path_to_princess
     directions(@m_location, @p_location)
   end
 
