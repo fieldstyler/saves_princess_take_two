@@ -18,8 +18,8 @@ class GameBoard
     coords
   end
 
-  def display_path_to_princess(steps="")
-    steps += directions(@m_location, @p_location)
+  def display_path_to_princess()
+    directions(@m_location, @p_location)
   end
 
   def next_move(m=@m_location, p=@p_location)
@@ -32,28 +32,22 @@ class GameBoard
   end
 end
 
-def directions(m, p)
+def directions(m, p, steps="")
   diff = (m[0] - p[0]).abs
-  steps = ""
   if m[0] > p[0]
-    diff.times do steps += "UP\n"
-    end
+    diff.times do steps += "UP\n" end
   else
-    diff.times do steps += "DOWN\n"
-    end
+    diff.times do steps += "DOWN\n" end
   end
   steps += horizontal_directions(m, p)
 end
 
-def horizontal_directions(m, p)
+def horizontal_directions(m, p, steps="")
   diff = (m[1] - p[1]).abs
-  steps = ""
   if m[1] > p[1]
-    diff.times do steps += "LEFT\n"
-    end
+    diff.times do steps += "LEFT\n" end
   else
-    diff.times do steps += "RIGHT\n"
-    end
+    diff.times do steps += "RIGHT\n" end
   end
   steps
 end
